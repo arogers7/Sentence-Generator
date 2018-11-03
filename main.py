@@ -3,8 +3,9 @@ from nltk.tokenize import sent_tokenize
 
 def OpenBook(title):
     book = open(title + ".txt", "r")
+    return book.read()
 
-    return book.read();
+def GenerateNGrams(sentences)
 
 if __name__ == '__main__':
     title = "SignOfFour"
@@ -28,8 +29,9 @@ if __name__ == '__main__':
             if word not in bigrams:
                 bigrams[word] = {nextWord:1}
             else:
-                pass
-                #bigrams[word][nextWord] += 1
-    print(bigrams['undivided'])
+                if nextWord in bigrams[word]:
+                    bigrams[word][nextWord] += 1
+                else:
+                    bigrams[word][nextWord] = 1
 
-    #print(bigrams)
+    print(bigrams)
